@@ -18,6 +18,7 @@ func redirect(w http.ResponseWriter, req *http.Request) {
 	if len(req.URL.RawQuery) > 0 {
 		target += "?" + req.URL.RawQuery
 	}
+	
 	log.Printf("redirect to: %s", target)
 	http.Redirect(w, req, target,
 		http.StatusTemporaryRedirect)
